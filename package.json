@@ -15,12 +15,18 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "gulp": "^5.0.1",
-    "gulp-sass": "^6.0.1",
+ "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.0",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.94.2"
+    "gulp-changed": "4.0.3",
+    "gulp-imagemin": "7.1.0",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-pngquant": "9.0.2",
+    "imagemin-webp": "6.0.0"
   }
 }

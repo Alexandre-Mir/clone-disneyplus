@@ -1,0 +1,51 @@
+$corPrimaria: #F9F9F9;
+$corFigCaption: #c0c0c0;
+$font-family: "Montserrat", sans-serif;
+
+@mixin text($font-size) {
+  font-size: $font-size;
+  color: $corPrimaria;
+  text-decoration: none;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+* {
+	@include reset-list()
+}
+
+.fig__img {
+  display: none;
+	width: 100vw;
+	object-fit: contain;
+}
+
+.fig__caption {
+  display: none;
+	position: absolute;
+  top: 15px;
+  left: 12px;
+	color: $corFigCaption !important;
+  @include text(12px)
+}
+
+.active {
+  display: block;
+}
+
+.hero__button {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  @include text(13px);
+  background-color: #000000CC;
+  padding: 12px 8px;
+  border: 1px solid $corPrimaria;
+    border-radius: 4px;
+
+}
