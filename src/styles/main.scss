@@ -1,51 +1,55 @@
-$corPrimaria: #F9F9F9;
-$corFigCaption: #c0c0c0;
-$font-family: "Montserrat", sans-serif;
+@use "variaveis";
+@use "hero";
 
-@mixin text($font-size) {
-  font-size: $font-size;
-  color: $corPrimaria;
-  text-decoration: none;
-}
-
-@mixin reset-list {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-family;
 }
 
-* {
-	@include reset-list()
+
+
+body {
+  background-color: variaveis.$corDeFundo;
 }
 
-.fig__img {
-  display: none;
-	width: 100vw;
-	object-fit: contain;
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: variaveis.$corTextoPrincipal;
 }
 
-.fig__caption {
-  display: none;
-	position: absolute;
-  top: 15px;
-  left: 12px;
-	color: $corFigCaption !important;
-  @include text(12px)
+@mixin title($fontSize: 40px) {
+  @include text($fontSize);
+  color: variaveis.$corTextoSecundario;
 }
 
-.active {
-  display: block;
+.text--big {
+  @include text(18px);
 }
 
-.hero__button {
-  position: absolute;
-  top: 15px;
-  right: 12px;
-  @include text(13px);
-  background-color: #000000CC;
-  padding: 12px 8px;
-  border: 1px solid $corPrimaria;
-    border-radius: 4px;
+.text {
+  @include text();
+}
 
+.text--small {
+  @include text(12px);
+}
+
+.title--big {
+  @include title(44px);
+}
+
+.title {
+  @include title();
+}
+
+.title--small {
+  @include title(28px);
+}
+
+.link-text {
+  @include text(18px);
+  color: variaveis.$corTextoSecundario;
+  text-decoration: underline;
 }

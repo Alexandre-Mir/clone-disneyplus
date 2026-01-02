@@ -12,7 +12,7 @@ const paths = {
 		dest: "./dist/css",
 	},
 	images: {
-		src: "./src/images/**/*.{jpg,jpeg,png,gif,webp}",
+		src: "./src/images/**/*.{jpg,jpeg,png,gif,webp,svg}",
 		dest: "./dist/images",
 	},
 };
@@ -36,9 +36,10 @@ function optimizeImages() {
 }
 
 exports.default = function () {
-	styles();
 	gulp.watch(paths.styles.src, styles);
 	gulp.watch(paths.images.src, optimizeImages);
 };
 
+exports.watch = exports.default;
+exports.build = gulp.parallel(styles, optimizeImages);
 exports.images = optimizeImages;
