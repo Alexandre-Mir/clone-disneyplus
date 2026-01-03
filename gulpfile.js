@@ -3,7 +3,6 @@ const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 
 const imagemin = require("gulp-imagemin");
-const webp = require("imagemin-webp");
 const changed = require("gulp-changed");
 
 const paths = {
@@ -31,7 +30,13 @@ function optimizeImages() {
 	return gulp
 		.src(paths.images.src)
 		.pipe(changed(paths.images.dest))
-		.pipe(imagemin([webp({ quality: 75 })], { verbose: true }))
+		.pipe(
+			imagemin([
+				imagemin.gifsicle({ interlaced: true }),
+				imagemin.mozjpeg({ quality: 75, progressive: true }),
+				imagemin.optipng({ optimizationLevel: 5 }),
+			])
+		)
 		.pipe(gulp.dest(paths.images.dest));
 }
 

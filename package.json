@@ -21,13 +21,15 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.69.0",
-    "gulp-sourcemaps": "^3.0.0",
     "gulp-changed": "4.0.3",
     "gulp-imagemin": "7.1.0",
-    "imagemin-mozjpeg": "9.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "9.0.2",
-    "imagemin-webp": "6.0.0"
+    "imagemin-webp": "6.0.0",
+    "sass": "^1.69.0"
   }
 }
