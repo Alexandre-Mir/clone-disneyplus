@@ -110,6 +110,7 @@ body {
   text-transform: uppercase;
   border-radius: 4px;
   text-decoration: none;
+  cursor: pointer;
   padding: 8px 14px;
   letter-spacing: 1px;
   border: 1px solid variaveis.$corDeFundoBotaoPrimario;
@@ -136,52 +137,52 @@ body {
       color: variaveis.$corDeFundo;
     }
   }
+}
 
-  .image-text-section {
-    padding: 5.6vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+.image-text-section {
+  padding: 5.6vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 
-	@media (max-width: 768px) {
-		display: block;
-	}
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &__text-container {
+    padding: 0 2vw;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--image-full-width {
+    display: block;
+    position: relative;
 
     img {
-      max-width: 100%;
+      width: 100%;
     }
 
     &__text-container {
-      padding: 0 2vw;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: calc(50% - 5.6vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-      h2 {
-        margin-bottom: 24px;
-      }
-    }
-
-    &--image-full-width {
-      display: block;
-      position: relative;
-
-      img {
+      @media (max-width: 768px) {
+        position: relative;
+        left: 0;
         width: 100%;
-      }
-
-      &__text-container {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        height: 100%;
-        width: calc(50% - 5.6vw);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-		@media (max-width: 768px) {
-			position: relative;
-			left: 0;
-			width: 100%;
-		}
       }
     }
   }

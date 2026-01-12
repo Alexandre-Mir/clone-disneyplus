@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clone Disney+</title>
+    <link
+      rel="shortcut icon"
+      href="dist/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Assista a filmes e séries da Disney, Pixar, Marvel, Star Wars e National Geographic em um só lugar."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,14 +26,18 @@
     <header class="header">
       <div class="header__container">
         <h1>
-          <img class="header__logo" src="./dist/images/disneyplus.svg" alt="Disney+">
+          <img
+            class="header__logo"
+            src="./dist/images/disneyplus.svg"
+            alt="Disney+"
+          />
         </h1>
         <ul class="header__links">
           <li class="header__links__item">
             <a href="#" class="button button--secondary">Assine agora</a>
           </li>
           <li class="header__links__item">
-            <a href="#" class="button button-dark">Entrar</a>
+            <a href="#" class="button button--dark">Entrar</a>
           </li>
         </ul>
       </div>
@@ -47,7 +60,7 @@
               alt="Disney+ - Star+ - Combo+"
             />
             <button class="button">Assine Agora</button>
-            <span>R$ 45,90/mês*</span>
+            <span class="text">R$ 45,90/mês*</span>
           </li>
           <li class="hero__content__combos__combo">
             <img
@@ -55,7 +68,7 @@
               alt="Disney+ - Star+ - Combo+"
             />
             <button class="button">Assine Agora</button>
-            <span>R$ 45,90/mês*</span>
+            <span class="text">R$ 45,90/mês*</span>
           </li>
         </ul>
         <p class="text--small">
@@ -65,17 +78,29 @@
       </div>
     </section>
     <section class="shows">
-      <nav class="shows__tabs">
+      <nav class="shows__tabs" role="tablist">
         <button
+          role="tab"
+          aria-selected="true"
           data-tab-button="em-breve"
           class="shows__tabs__button shows__tabs__button--is-active"
         >
           Em Breve
         </button>
-        <button data-tab-button="populares" class="shows__tabs__button">
+        <button
+          role="tab"
+          aria-selected="false"
+          data-tab-button="populares"
+          class="shows__tabs__button"
+        >
           Mais Populares
         </button>
-        <button data-tab-button="star_plus" class="shows__tabs__button">
+        <button
+          role="tab"
+          aria-selected="false"
+          data-tab-button="star_plus"
+          class="shows__tabs__button"
+        >
           Mais no Star+
         </button>
       </nav>
@@ -221,7 +246,8 @@
     <section class="image-text-section">
       <img
         src="./dist/images/tv_pc_tablet_celular.png"
-        alt="Imagem com TV, Computador, Tablet e Celular	"
+        alt="Imagem com TV,
+      Computador, Tablet e Celular"
       />
       <div class="image-text-section__text-container">
         <h2 class="title">Assista do seu jeito</h2>
@@ -234,9 +260,11 @@
       </div>
     </section>
     <section class="image-text-section image-text-section--image-full-width">
-      
       <picture>
-        <source media="(max-width: 768px)" srcset="./dist/images/fundo_rei_leao_celular.png">
+        <source
+          media="(max-width: 768px)"
+          srcset="./dist/images/fundo_rei_leao_celular.png"
+        />
         <img src="./dist/images/fundo_rei_leao.png" alt="Imagem com Rei Leão" />
       </picture>
       <div
@@ -384,8 +412,8 @@
         <ul class="footer__links">
           <li class="footer__links__item">
             <div class="language-selector">
-              <img src="./dist/images/icones/globe.svg" alt="Globo do mundo">
-              <select>
+              <img src="./dist/images/icones/globe.svg" alt="Globo do mundo" />
+              <select aria-label="Selecionar idioma">
                 <option>English</option>
                 <option selected>Português</option>
               </select>
@@ -410,7 +438,7 @@
             <a href="#" class="text--small">Ajuda</a>
           </li>
           <li class="footer__links__item">
-            <a href="#" class="text--small"Sobre o Disney+</a>
+            <a href="#" class="text--small">Sobre o Disney+</a>
           </li>
         </ul>
         <p class="text--small">@2025 Disney. Todos os direitos reservados.</p>

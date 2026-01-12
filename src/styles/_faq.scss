@@ -33,10 +33,10 @@
             }
 
             &__answer {
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
                 padding: 0 24px;
-                transition: height, .5s ease;
+                transition: max-height .5s ease;
             }
 
             &--is-open {
@@ -45,9 +45,9 @@
                 }
 
                 .faq__questions__item__answer {
-                    height: auto;
+                    max-height: 500px; // Valor suficientemente grande
                     padding-bottom: 24px;
-                    transition: height, .5s ease;
+                    transition: max-height .5s ease;
                 }
             }
         }

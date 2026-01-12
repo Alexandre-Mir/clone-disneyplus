@@ -2,7 +2,6 @@ const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
-
 const imagemin = require("gulp-imagemin");
 const changed = require("gulp-changed");
 
@@ -12,7 +11,7 @@ const paths = {
 		dest: "./dist/css",
 	},
 	images: {
-		src: "./src/images/**/*.{jpg,jpeg,png,gif,webp,svg}",
+		src: "./src/images/**/*.{jpg,jpeg,png,gif,webp,svg,ico}",
 		dest: "./dist/images",
 	},
 	scripts: {
@@ -22,8 +21,11 @@ const paths = {
 };
 
 function scripts() {
-	return gulp.src(paths.scripts.src)
+	return gulp
+		.src(paths.scripts.src)
+		.pipe(sourcemaps.init())
 		.pipe(uglify())
+		.pipe(sourcemaps.write("./maps"))
 		.pipe(gulp.dest(paths.scripts.dest));
 }
 
@@ -51,12 +53,13 @@ function optimizeImages() {
 		.pipe(gulp.dest(paths.images.dest));
 }
 
-exports.default = function () {
+function watch() {
 	gulp.watch(paths.styles.src, styles);
 	gulp.watch(paths.images.src, optimizeImages);
 	gulp.watch(paths.scripts.src, scripts);
-};
+}
 
-exports.watch = exports.default;
+exports.default = gulp.parallel(styles, optimizeImages, scripts);
+exports.watch = watch;
 exports.build = gulp.parallel(styles, optimizeImages, scripts);
 exports.images = optimizeImages;
