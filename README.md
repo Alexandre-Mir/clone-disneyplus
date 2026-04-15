@@ -1,6 +1,6 @@
 # Disney+ Clone
 
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](#) *(Insira o Link Vivo do Deploy na Vercel aqui)*
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://clone-disneyplus-ten-iota.vercel.app/) *(Projeto rodando na Vercel)*
 
 Este projeto é um clone da landing page do Disney+, desenvolvido com foco em arquitetura CSS, manipulação de DOM com JavaScript puro e automação de tarefas. O objetivo é replicar a interface responsiva e interativa da plataforma, demonstrando habilidades avançadas em desenvolvimento front-end, uso de boas práticas e um código manutenível.
 
